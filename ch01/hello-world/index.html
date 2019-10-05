@@ -5,18 +5,22 @@
     <script src="js/react-dom.js"></script>
   </head>
   <body>
-    <div id="content"></div>
+    <div id="condensed"></div>
+    <div id="expanded"></div>
+    <div id="in_script"></div>
     <script type="text/javascript">
-      var h1 = React.createElement('h1', null, 'Hello world!')
+      var h1 = React.createElement('h1', null, 'Expanded')
+      var ele = document.getElementById('expanded');
       ReactDOM.render(
-        h1,
-        document.getElementById('content')
+              h1,
+              ele
       )
-      // Usage without the h1 variable
-      // ReactDOM.render(
-      //   React.createElement('h1', null, 'Hello world!'),
-      //   document.getElementById('content')
-      // )
+      // Usage without the 'h1' variable nor 'ele' variable
+      ReactDOM.render(
+        React.createElement('h1', null, 'Condensed'),
+        document.getElementById('condensed')
+      )
     </script>
   </body>
+    <script src="js/in_script.js"></script>
 </html>
