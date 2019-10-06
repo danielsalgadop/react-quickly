@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <script src="js/react.js"></script>
     <script src="js/react-dom.js"></script>
-  </head>
-  <body>
-    <div id="condensed"></div>
-    <div id="expanded"></div>
-    <div id="in_script"></div>
-    <script type="text/javascript">
-      var h1 = React.createElement('h1', null, 'Expanded')
-      var ele = document.getElementById('expanded');
-      ReactDOM.render(
-              h1,
-              ele
-      )
-      // Usage without the 'h1' variable nor 'ele' variable
-      ReactDOM.render(
-        React.createElement('h1', null, 'Condensed'),
-        document.getElementById('condensed')
-      )
-    </script>
-  </body>
-    <script src="js/in_script.js"></script>
+</head>
+<body>
+<div id="h1_and_paragraph_container"></div>
+<script type="text/javascript">
+    class H1 extends React.Component {
+        render() {
+            return React.createElement(
+                'h1',
+                this.props,
+                this.props.h1
+            )
+        }
+    }
+
+    class Paragraph extends React.Component {
+        render() {
+            return React.createElement(
+                'p',
+                this.props,
+                this.props.p
+            )
+        }
+    }
+
+    ReactDOM.render(
+        React.createElement(
+            'div',
+            null,
+            React.createElement(H1, {
+                h1: 'valor h1'
+            }),
+            React.createElement(Paragraph, {
+                p: 'esto es texto'
+            }),
+            React.createElement(H1, {
+                h1: 'valor h1_2'
+            }),
+            React.createElement(Paragraph, {
+                p: 'esto es texto_2',
+            }),
+        ),
+        document.getElementById('h1_and_paragraph_container')
+    )
+</script>
+</body>
+<script src="js/in_script.js"></script>
 </html>
