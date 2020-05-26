@@ -1,0 +1,47 @@
+<!DOCTYPE html utf-8>
+<html>
+<head>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="container1"></div>
+<div id="container2"></div>
+<div id="container3"></div>
+<div id="container4"></div>
+<div id="container5"></div>
+<!--// trying to use PROPERTY in a HTML atribute way-->
+<!--<div id="asigning_propery_in_html_tag" PROPERTY="http://meneame.net"></div>-->
+
+<script type="text/javascript">
+    ReactDOM.render(
+        React.createElement('p', null, 'esto es texto, segundo param null'),
+        document.getElementById('container')
+    )
+    ReactDOM.render(
+        React.createElement('p', {}, 'esto es texto, segundo param {}'),
+        document.getElementById('container1')
+    ),
+    ReactDOM.render(
+        React.createElement('p', {style: {color: "green"}}, 'esto es texto, segundo param con style {color:"green"}'),
+        document.getElementById('container3')
+    )
+
+    ReactDOM.render(
+        React.createElement('a', null, 'eso un link sin href'),
+        document.getElementById('container4'),
+    )
+    ReactDOM.render(
+        React.createElement('a', {href: 'http://google.com', value:'tt'}, 'eso un link CON href'),
+        document.getElementById('container5')
+    )
+    // trying to use PROPERTY in a HTML atribute way
+    // ReactDOM.render(
+    //     React.createElement('a', {href:  this.props.PROPERTY}, 'algo'),
+    //     document.getElementById('asigning_propery_in_html_tag')
+    // )
+
+</script>
+</body>
+</html>
